@@ -16,7 +16,6 @@ class MobileServiceInvoice(models.Model):
     amount = fields.Integer(string='Amount')
     number = fields.Char(string='Service Id')
 
-    @api.multi
     def action_invoice_create(self):
         active_id = self._context.get('active_id')
         service_id = self.env['mobile.service'].search([('id', '=', active_id)])
